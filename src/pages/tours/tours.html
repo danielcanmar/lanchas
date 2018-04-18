@@ -1,0 +1,62 @@
+<!-- Encabesado de Home  -->
+<ion-header class="animated fadeIn no-shadow">
+  <ion-navbar class="no-border" color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!isSearchbarOpened">
+      Rent Boats
+    </ion-title>
+    <!-- Barra de busqueda -->
+    <ion-searchbar class="searchbar" *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false"
+      autocomplete="on" autocorrect="on" spellcheck="true" animated="false" placeholder="Tours" cancelButtonText="X"></ion-searchbar>
+    <!-- botones del header -->
+    <ion-buttons end>
+      <button ion-button tappable *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="ios-search"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<!-- Contenido de Home -->
+<ion-content>
+  <ion-item-group class="">
+    <!-- Encabesado de Bloque   -->
+    <ion-item-divider color="primary">
+      <h2 ion-text class="">
+        <ion-icon name="md-compass"></ion-icon>
+        Guia de Tour
+      </h2>
+    </ion-item-divider>
+    <!-- lista de tours -->
+    <div no-padding>
+      <ion-grid no-padding>
+        <ion-row no-padding>
+          <ion-col col-12 col-lg-6 *ngFor="let hotel of hotels; let i = index" col-6 col-md-3 (click)="viewHotel(hotel)">
+            <ion-list>
+              <ion-item class="item-lista">
+                <ion-avatar item-start>
+                  <img src="{{hotel.thumb}}">
+                </ion-avatar>
+                <div class="">
+                  <h5 ion-text class="">{{ hotel.name }}</h5>
+                </div>
+                <div class="point">
+                  {{ (100 * (1 - hotel.price / hotel.sale_price)).toFixed(0)}}%
+                </div>
+                <h3>{{hotel.address}}</h3>
+                <h1>{{hotel.rating}}</h1>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-item-group>
+</ion-content>

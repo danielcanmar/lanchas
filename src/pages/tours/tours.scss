@@ -1,0 +1,49 @@
+page-tours ,  
+  .item-lista{
+     width: 100%;
+     height: 160px;
+     background-color: rgba(161, 185, 201, 0.338);
+     padding: 0px;
+     margin:  0px;
+     position: relative;
+     margin-bottom: -20px;
+     
+
+    ion-avatar img{    
+       width: 100px;
+       height: 100px;
+       padding: 0px;
+       margin-left: 10px;
+       
+    }
+    div .point{
+       position: absolute;
+       padding: 1rem 2rem;
+       top: 0;
+       right: 0;
+       background-color: rgba(10, 53, 126, 0.564);
+       color: #fff; 
+       border-radius: 5px;     
+
+    }
+    .searchbar {
+      width: 100%;
+      height: 50px;
+      background: #2b303b;
+      border: none;
+      font-size: 10pt; //float: left;
+      color: #262626;
+      padding-left: 35px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      color: #fff;
+      -webkit-transition: width .55s ease;
+      -moz-transition: width .55s ease;
+      -ms-transition: width .55s ease;
+      -o-transition: width .55s ease;
+      transition: width .55s ease;
+    }
+
+  }
+  

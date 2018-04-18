@@ -1,0 +1,96 @@
+page-hotel-datail {
+  // style for slider
+  ion-slides.to-top {
+    height: auto;
+    margin-bottom: 0px;
+    background-color: rgba(67, 67, 120, 0.455);
+    @media (min-width: 768px) {
+      img {
+        width: 100%;
+        height: 300px;
+      }
+    }
+    .swiper-pagination {
+      display: block !important;
+      .swiper-pagination-bullet {
+        background: color($colors, light);
+      }
+    }
+  } ///Servicios
+  .border-bottom {
+    border-bottom: 1px solid rgba(226, 223, 232, 0.1);
+  }
+  .detail-bg {
+    background-color: #3737ff;
+  }
+  .service-name {
+    display: block;
+    font-size: 0.8em;
+  } ///perfil
+  .item-perfil {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(222, 227, 237, 0.503);
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    margin-bottom: -30px;
+    ion-avatar img {
+      width: 100px;
+      height: 100px;
+      padding: 0px;
+      margin-left: 20px;
+      border-radius: 5px;
+    }
+    div .point {
+      position: absolute;
+      padding: 2rem 2rem;
+      top: -10px;
+      right: 0;
+      background-color: rgb(5, 51, 130);
+      color: #fff;
+      border-radius: 10px;
+    }
+  }
+  .detalles {
+    height: 70px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(252, 255, 253, 0.468);
+    text-align: justify;
+  }
+  ion-grid {
+    .left {
+      padding-right: 140px;
+      height: 50px;
+      width: 100%;
+      color: #3737ff;
+      background-color: rgba(252, 255, 255, 0.989);
+    }
+    .right {
+      //padding-left: 100px;
+      width: 100%;
+      font-size: 12px;
+      height: 50px;
+      color: #3737ff;
+      background-color: rgba(252, 255, 255, 0.989);
+    }
+  } ///Contenedor de Registro
+  .Cont-reg {
+    background: rgba(10, 82, 126, 0.975);
+    border-top: 2px solid rgb(61, 100, 198);
+    padding-top: 20px;
+    ion-item {
+      border-radius: 1px;
+      background: rgba(10, 81, 126, 0.181);
+      font-family: monospace;
+      color: rgb(183, 230, 13);
+      font-size: 18px;
+      margin-bottom: 10px;
+      ion-label,
+      ion-datetime,
+      ion-select {
+        color: rgba(230, 233, 247, 0.975);
+      }
+    }
+  }
+}

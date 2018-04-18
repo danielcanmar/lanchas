@@ -1,0 +1,63 @@
+<!-- Encabesado de Home  -->
+<ion-header class="animated fadeIn no-shadow">
+  <ion-navbar class="no-border" color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!isSearchbarOpened" >
+      Rent Boats    
+    </ion-title>
+    <!-- Barra de busqueda -->
+    <ion-searchbar  class="searchbar" *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false"
+    autocomplete="on" autocorrect="on" spellcheck="true" animated="false" placeholder="Ciudades" cancelButtonText="X"
+    ></ion-searchbar>
+    <!-- botones del header -->
+    <ion-buttons end>
+      <button ion-button tappable *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="ios-search"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+      <div class="clear"></div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!-- Contenido de Home -->
+<ion-content>
+  <ion-item-group class="home-widget">
+    <!-- Encabesado de Bloque   -->
+    <ion-item-divider color="primary">
+      <h2 ion-text class="">
+        <ion-icon name="md-compass"></ion-icon>
+        Guia de Ciudades
+      </h2>
+    </ion-item-divider>
+    <!-- Lista de Ciudades -->
+    <ion-item>
+      <!-- Funcion for para el listado de los distintos elementos  -->
+      <ion-grid class="list-hotels primary-bg" no-padding>
+        <ion-row no-padding>
+          <ion-col col-12 col-lg-6 *ngFor="let hotel of hotels; let i = index" col-6 col-md-3 tappable (click)="viewHotel(hotel)">
+            <div class="hotel-bg" [ngStyle]="{'background-image': 'url(' + hotel.thumb + ')'}" *ngIf="i < 8">
+              <div class="bg-filter">
+                <div class="bottom-info">
+                  <div>
+                    <div class="">
+                      <h1 ion-text class="text-white">{{ hotel.name }}</h1>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-navbar class="nav-transparent" color="dark">
+    <ion-title>{{ hotel.name }}</ion-title>
+  </ion-navbar>
+  <ion-fab top right class="toptop">
+    <button ion-fab mini round icon-only color="dark" (click)="Atras()">
+      <ion-icon name="md-close" class="text-white"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-header>
+
+<ion-content class="cont">
+  <!-- Perfil del Tour -->
+  <ion-list no-padding>
+    <ion-item class="item-perfil">
+      <ion-avatar item-start>
+        <img src="{{hotel.thumb}}">
+      </ion-avatar>
+      <div class="">
+        <h5 ion-text class="">{{ hotel.name }}</h5>
+      </div>
+      <div class="point">
+        {{ (100 * (1 - hotel.price / hotel.sale_price)).toFixed(0)}}%
+      </div>
+      <h3>{{hotel.address}}</h3>
+      <h1>{{hotel.rating}}</h1>
+    </ion-item>
+  </ion-list>
+  <!--slides-->
+  <ion-slides no-padding class="to-top" pager>
+    <ion-slide *ngFor="let image of hotel.images">
+      <img src="{{ image }}" alt="">
+    </ion-slide>
+  </ion-slides>
+  <!-- Servicios -->
+  <div class="border-bottom" no-padding>
+    <ion-item>
+      <ion-icon item-start name="md-glasses" color=""></ion-icon>
+      <h2>Servicios</h2>
+    </ion-item>
+    <ion-grid class="border-bottom detail-bg">
+      <ion-row>
+        <ion-col *ngFor="let service of hotel.services" text-center>
+          <ion-icon class="text-2x" name="{{ service.icon }}" color="light"></ion-icon>
+          <span class="service-name" ion-text color="light">{{ service.name }}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- Detallles -->
+  <div no-padding>
+    <ion-grid no-padding>
+      <ion-list>
+        <ion-card no-padding>
+          <ion-card-header>
+            Descripcion.
+          </ion-card-header>
+          <ion-card-content item-start>
+            {{ hotel.description }}
+          </ion-card-content>
+        </ion-card>
+        <ion-item class="detalles">
+          <ion-icon item-start name="logo-usd" color=""></ion-icon>
+          <h2>Precio por persona: ${{ hotel.price }}</h2>
+        </ion-item>
+        <ion-item class="detalles">
+          <ion-icon item-start name="md-alarm" color=""></ion-icon>
+          <h2>Horarios: {{ hotel.horarios }}</h2>
+        </ion-item>
+        <ion-item class="detalles">
+          <ion-icon item-start name="md-walk" color=""></ion-icon>
+          <h2>Cupo seguro</h2>
+          <ion-label>Cupo Seguro</ion-label>
+          <ion-checkbox [(ngModel)]="mushrooms" disabled="{{hotel.lugar}}"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-grid>
+  </div>
+  <!-- Registro  -->
+  <ion-grid padding class="Cont-reg">
+    <ion-list padding>
+      <ion-item class="">
+        <ion-label>
+          <ion-icon name="md-calendar"></ion-icon>
+          Apartar fecha
+        </ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-icon item-start name="md-alarm" color=""></ion-icon>
+          Horario de Tour</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="6">6:00 AM</ion-option>
+          <ion-option value="9">9:00 AM</ion-option>
+          <ion-option value="12">12:00 PM</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lugar Seguro</ion-label>
+        <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+
+
+  <!-- botones de atra y registro -->
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col no-padding>
+        <button class="left" ion-button (click)="atras()">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col no-padding>
+        <button class="right" ion-button (click)="pagar()" >
+          <p>Registrar</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

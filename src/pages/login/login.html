@@ -1,0 +1,43 @@
+<ion-content padding class="auth-page">
+  <div class="login-content">
+    <!-- logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <h2 ion-text color="light" no-margin>
+        <strong>Rent Boats</strong>
+      </h2>
+    </div>
+
+    <!-- labels  -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start></ion-icon>
+          Correo
+        </ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start></ion-icon>
+          Contraseña
+        </ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </form>
+
+    <p text-right ion-text color="light" tappable (click)="forgotPass()">
+      <strong>¿Olvidaste tu contraseña?</strong>
+    </p>
+
+    <!-- Button -->
+    <button class="btn-group" ion-button icon-start block color="dark" tappable (click)="login()" [disabled]="">
+      <ion-icon name="log-in"></ion-icon>
+      Entrar
+    </button>
+    <div text-center margin-top>
+      <span ion-text color="light" tappable (click)="register()">¿Nuevo aqui?
+        <strong> Registrate</strong>
+      </span>
+    </div>
+  </div>
+</ion-content>
