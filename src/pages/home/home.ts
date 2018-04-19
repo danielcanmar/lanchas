@@ -16,7 +16,7 @@ import { UserServiceProvider } from '../../providers/user-service';
 export class HomePage {
   // list of hotels
   public hotels: any;///////////--------------Variable 
-  public isSearchbarOpened = false;
+  public isSearchbarOpened = false; //<------------variable de la busqueda
   users: any[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public nav: NavController, hotelService: HotelService, public userService: UserServiceProvider,) {

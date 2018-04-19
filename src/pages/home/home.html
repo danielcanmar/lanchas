@@ -64,10 +64,10 @@
 <ion-list>
   <ion-item *ngFor="let user of users">
     <ion-avatar item-start>
-      <img [src]="user.picture.medium">
+      <!-- <img [src]="user.picture.medium"> -->
     </ion-avatar>
-    <h2>{{ user.name.first | uppercase }}</h2>
-    <p>{{ user.email }}</p>
+    <!-- <h2>{{ user.name.first | uppercase }}</h2> -->
+    <p>{{ Usuarios.Message }}</p>
   </ion-item>
 </ion-list>
 </ion-content>
