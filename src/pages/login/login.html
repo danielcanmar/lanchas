@@ -14,14 +14,16 @@
           <ion-icon name="mail" item-start></ion-icon>
           Correo
         </ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" #email></ion-input>
+
       </ion-item>
       <ion-item>
         <ion-label floating>
           <ion-icon name="lock" item-start></ion-icon>
           Contraseña
         </ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" #password></ion-input>
+
       </ion-item>
     </form>
 
@@ -30,7 +32,7 @@
     </p>
 
     <!-- Button -->
-    <button class="btn-group" ion-button icon-start block color="dark" tappable (click)="login()" [disabled]="">
+    <button class="btn-group" ion-button icon-start block color="dark" tappable (click)="login()">
       <ion-icon name="log-in"></ion-icon>
       Entrar
     </button>

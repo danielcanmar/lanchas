@@ -14,24 +14,15 @@ import { ActivityService } from "../providers/activity-service";
 import { CarService } from "../providers/car-service";
 import { TripService } from "../providers/trip-service";
 import { ModPagarPage } from "../pages/mod-pagar/mod-pagar";
+import { HttpClientModule } from '@angular/common/http';
 
 //-------------------------- Plugins---------------------------------
 import { Calendar } from '@ionic-native/calendar';
+import { UserServiceProvider, } from '../providers/user-service';
 
-//-----------------------------Firebase--------------------------------
-// import { AngularFireModule } from "angularfire";
-// import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-// import { AngularFireAuthModule } from 'angularfire2/auth';
+import firebase from 'firebase';
+import { firebaseConfig } from './credentials';
 
-
-// export const firebaseConfig = {
-//   apiKey: "AIzaSyBfWpPuUGneCNVjwY3kOSpRG8U75jvFSbc",
-//   authDomain: "bacalarbd.firebaseapp.com",
-//   databaseURL: "https://bacalarbd.firebaseio.com",
-//   projectId: "bacalarbd",
-//   storageBucket: "bacalarbd.appspot.com",
-//   messagingSenderId: "497728931125",
-// };
 
 
 @NgModule({
@@ -42,11 +33,11 @@ import { Calendar } from '@ionic-native/calendar';
     // LoginPage
   ],
   imports: [
-    BrowserModule,     
+    BrowserModule,
+    HttpClientModule,     
     IonicModule.forRoot(MyApp),
-    // AngularFireModule.initializeApp(firebaseConfig),//<------------import de Angularfirebase
-    // AngularFireDatabaseModule,
-    // AngularFireAuthModule
+
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,7 +55,9 @@ import { Calendar } from '@ionic-native/calendar';
     ActivityService,
     CarService,
     TripService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserServiceProvider
   ]
 })
 export class AppModule {}

@@ -21,10 +21,11 @@
   &::after {
     content: "";
     
-    background: url("../assets/imgs/fondo.jpg") center no-repeat;
+    background: url("../assets/imgs/fondo2.jpg") center no-repeat;
 
     background-size: cover;
     opacity: 0.9;
+    
     top: 0;
     left: 0;
     bottom: 0;
@@ -153,7 +154,7 @@ ion-navbar.no-border {
   .bg-filter {
     position: relative;
     height: 150px;
-    background: rgba(32, 190, 234, 0.105);
+    background: rgba(49, 59, 62, 0.105);
     .bottom-info {
       position: absolute;
       width: 100%;
@@ -169,6 +170,8 @@ ion-navbar.no-border {
     background-color: rgba(218, 17, 17, 0.564);
     color: #fff;
     
+
+    
   }
   .origin-price {
     color: #C0C0C0;
@@ -181,5 +184,7 @@ ion-navbar.no-border {
 }
 .text-white{
   color: #fff;
-    
+  text-shadow: 2px 2px rgb(0, 0, 0);
+
+
 }

@@ -1,5 +1,7 @@
-import { Component, } from '@angular/core';
+import { Component, ViewChild, } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import firebase from 'firebase';
+
 //import { HomePage } from '../home/home';
 
 @IonicPage({
@@ -13,11 +15,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  @ViewChild('email') email;
+  @ViewChild('password') password;
 
-  constructor(public nav: NavController, public navParams: NavParams) {
+  constructor(
+    public nav: NavController,
+    public navParams: NavParams,
+  ) {
   }
+  
 
-  login() {
+  registrar(){  
+
+  }
+  
+
+  login() {    
+    
     this.nav.setRoot('page-home');  //// Funcion para cambio de pagina 
   }
 }
+
+
