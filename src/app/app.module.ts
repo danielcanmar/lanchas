@@ -20,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Calendar } from '@ionic-native/calendar';
 import { UserServiceProvider, } from '../providers/user-service';
 
-import firebase from 'firebase';
-import { firebaseConfig } from './credentials';
+
 
 
 
